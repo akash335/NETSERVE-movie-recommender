@@ -66,41 +66,40 @@
    --> Higher similarity → higher probability of relevance
 * Similarity scores act like probabilistic weights.
 
-8. Belief Networks (Conceptual Use)
-
-* Although not explicitly built, the similarity network behaves like a belief graph:
-   --> Nodes influence each other's relevance
-   --> Similar movies propagate probability mass
-
-9. Fuzzy Logic
+8. Fuzzy Logic
 
 * Genre and keyword matches are not binary.
 * Partial overlap → partial membership
 * “Similarity” is computed using fuzzy membership functions.
 
-10. Reinforcement Learning (Conceptual Tie-In)
+9. Reinforcement Learning (Conceptual Tie-In)
 
 * The system “prefers” movies that historically correlate strongly.
 * This resembles:
    --> Policy search
    --> Reward = similarity score
 
-11. Applications
+10. Applications
 
 * Personalized entertainment recommendations
-* OTT platform
-Content discovery systems
+* OTT platforms
+* Content discovery systems
+* Marketing analytics
 
-Marketing analytics
+# Features
+1. Content-based recommendation using AI
+2. Cosine Similarity matrix from movie metadata
+3. TMDB API integration for posters
+4. Fully responsive UI with animations
+5. Fast search using NumPy vectors
+6. Modern black & neon themed interface
 
-Vector Space Model
-Text Processing (TF-IDF / Bag-of-Words)
-Feature Engineering
-Cosine Similarity
-Search-based Recommendation
-State Space Representation
-Problem Reduction
-Automated Reasoning Concepts
+# Tech Stack
+* Python
+* Pandas, NumPy, Scikit-learn
+* Streamlit UI
+* TMDB API
+* CSS animations
 
 # Dataset
 We used TMDB’s publicly available dataset:
@@ -111,16 +110,26 @@ tmdb_5000_credits.csv
 Both files are merged and processed into a compressed movie_data.npz.
 
 # How it Works
-1. All movie genres, keywords, and descriptions are combined into a single text “tag”.
-2. Tags are converted into vectors.
-3. Cosine similarity calculates how close movies are.
-4. TMDB API fetches posters dynamically.
-5. Streamlit presents results in an animated UI.
+1. Tags Creation (Knowledge Representation)
+   --> All movie genres, keywords, and overview descriptions are merged into one combined text field called a “tag”, forming a unified knowledge representation of each movie.
+
+2. Vectorization (State-Space Encoding)
+   --> Each movie tag is converted into a numerical feature vector, representing the movie in a high-dimensional state space using NLP techniques.
+
+3. Similarity Computation (Heuristic Search)
+   --> Using cosine similarity, the system calculates how “close” two movies are.
+   --> Higher similarity = movies share themes, genres, and content.
+
+4. Poster Retrieval (External Knowledge Access)
+   --> For each recommended movie, the TMDB API is used to fetch the official poster image dynamically using the movie’s TMDB ID.
+
+5. Interactive UI Output (AI Application Layer)
+   --> A modern Streamlit interface displays recommendations with animated movie cards, smooth hover effects, and a clean dark-themed UI.
 
 # 🔐 TMDB API
 Add your API key inside app.py: TMDB_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-# Running Locally
+# How to Run
 pip install -r requirements.txt
 python build_npz.py
 streamlit run app.py
