@@ -43,17 +43,17 @@ movies, similarity = load_data()
 # Header UI
 st.markdown("""
 <div style='background:#7a0000;padding:20px;border-radius:10px;color:white;font-size:32px;font-weight:bold;'>
-🎬 NETSERVE Movie Recommender System
+NETSERVE Movie Recommender System 🎬
 </div>
 """, unsafe_allow_html=True)
 
 # Movie selector
-movie_list = movies["title"].values
+movie_list = movies["title_x"].values
 selected = st.selectbox("Choose a movie to recommend:", movie_list)
 
 # Recommendation function
 def recommend(movie):
-    idx = movies[movies["title"] == movie].index[0]
+    idx = movies[movies["title_x"] == movie].index[0]
     distances = similarity[idx]
     movie_indices = sorted(
         list(enumerate(distances)),
