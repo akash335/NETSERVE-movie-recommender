@@ -1,26 +1,58 @@
+# 🎬 CineXplain Movie Recommender 🎞️
 
-# CineXplain — YouTube-style Netflix Movie Recommender
+A movie recommendation system using content-based similarity, deployed using Streamlit with TMDB API integration.
 
-This UI is designed to look like the YouTube tutorial screenshot:
+# Project Overview
+CineXplain is a movie recommendation web app that helps users discover similar movies based on a chosen title. It analyzes movie metadata (genres, keywords, overview) and uses NLP + cosine similarity to recommend the most relevant movies.
 
-- Top horizontal **poster carousel**.
-- Centered dark box with **dropdown search**.
-- Big red **"Show Recommendation"** button.
-- Grid of posters for recommended movies (5 per row).
+This project includes:
+✅ Data processing
+✅ Feature extraction
+✅ Similarity computation
+✅ TMDB poster fetching
+✅ Modern UI with animations + custom CSS
+✅ Streamlit Cloud deployment
 
-## Usage
+# 👨‍💻 Team Members
+| Name              | Roll Number |
+| ----------------- | ----------- |
+| Porumamilla Akash | 12341590    |
+| Kammari Amandeeip | 12341060    |
+| Gangadhar         | 12340860    |
 
-1. Copy your `movie_data.pkl` next to `app.py`.
-   - The pickle must contain:
-     - a DataFrame of movies (with columns `title` and `movie_id` or `id`/`movieId`),
-     - a cosine similarity matrix (NumPy array or SciPy sparse) aligned with that DataFrame.
-2. Add your TMDB key:
-   - EITHER create `.env` with
 
-         TMDB_API_KEY=YOUR_TMDB_V3_KEY
+# AI Concepts Used
+Vector Space Model
+Text Processing (TF-IDF / Bag-of-Words)
+Feature Engineering
+Cosine Similarity
+Search-based Recommendation
+State Space Representation
+Problem Reduction
+Automated Reasoning Concepts
 
-   - OR open `app.py` and replace `PASTE_YOUR_KEY_HERE` with your key.
-3. Install requirements and run:
+# Dataset
+We used TMDB’s publicly available dataset:
 
-       pip install -r requirements.txt
-       streamlit run app.py
+tmdb_5000_movies.csv
+tmdb_5000_credits.csv
+
+Both files are merged and processed into a compressed movie_data.npz.
+
+# How it Works
+1. All movie genres, keywords, and descriptions are combined into a single text “tag”.
+2. Tags are converted into vectors.
+3. Cosine similarity calculates how close movies are.
+4. TMDB API fetches posters dynamically.
+5. Streamlit presents results in an animated UI.
+
+# 🔐 TMDB API
+Add your API key inside app.py: TMDB_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# Running Locally
+pip install -r requirements.txt
+python build_npz.py
+streamlit run app.py
+
+# Live Demo
+🔗 https://cinexplain-movie-recommender.streamlit.app/
