@@ -72,6 +72,6 @@ if st.button("Show Recommendation"):
     cols = st.columns(5)
     for idx, row in enumerate(results.itertuples()):
         with cols[idx]:
-            st.write(row.title)
+            st.write(row.title_x)
             st.image(f"https://image.tmdb.org/t/p/w500{movies.iloc[row.Index].get('poster_path','')}",
                      use_container_width=True)
