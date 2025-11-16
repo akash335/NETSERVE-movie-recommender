@@ -1,0 +1,96 @@
+/* ------------------------------
+   GLOBAL PAGE
+------------------------------- */
+body {
+    background-color: #0b0e11;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Remove Streamlit default margins */
+.block-container {
+    padding-top: 1rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* ------------------------------
+   HEADER BAR
+------------------------------- */
+.header-bar {
+    background: linear-gradient(to right, #7a0000, #b30000);
+    padding: 25px 35px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.header-title {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ------------------------------
+   SELECTOR + BUTTON SECTION
+------------------------------- */
+.selector-wrapper {
+    background-color: #14161c;
+    padding: 22px 26px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.selector-label {
+    font-size: 16px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.stSelectbox > div {
+    background-color: #1b1d24 !important;
+    border-radius: 6px !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+}
+
+/* ------------------------------
+   BUTTONS
+------------------------------- */
+.stButton > button {
+    width: 100%;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.stButton > button:hover {
+    background-color: #ff0f1f;
+}
+
+/* ------------------------------
+   RECOMMENDATIONS SECTION
+------------------------------- */
+.rec-header {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Poster Images */
+.poster-img {
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.6);
+}
+
+.poster-title {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 14px;
+}
